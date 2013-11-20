@@ -24,8 +24,8 @@
     options = $.extend($.safeHarbor.defaults, options);
 
     if (!$.cookie || !$.cookie(options.cookie.name)) {
-      var closeBtn = $('<span>').css({float: 'right', margin: '0 5px', cursor: 'pointer'}).text('×').on('click', hideRibbon);
-      var ribbon = $('<div>').addClass(options.cssClass).css(options.styles).text(options.text).append(closeBtn);
+      var closeBtn = $('<span>').css({float: 'right', margin: '0 12px', cursor: 'pointer'}).text('×').on('click', hideRibbon);
+      var ribbon = $('<div>').addClass(options.cssClass).css(options.styles).html(options.text).append(closeBtn);
       $('body').prepend(ribbon);
     }
   };
@@ -42,12 +42,12 @@
       top: 0,
       left: 0,
       width: '100%',
-      fontSize: '14px',
       textAlign: 'center',
       padding: '5px 0',
       color: '#eee',
-      backgroundColor: '#444',
-      background: 'rgba(0, 0, 0, .5)'
+      background: '#444',
+      opacity: 0.9,
+      zIndex: 5
     }
   };
 
