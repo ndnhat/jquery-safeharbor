@@ -27,6 +27,8 @@
       var closeBtn = $('<span>').css({float: 'right', margin: '0 12px', cursor: 'pointer'}).text('×').on('click', hideRibbon);
       var ribbon = $('<div>').addClass(options.cssClass).css(options.styles).html(options.text).append(closeBtn);
       $('body').prepend(ribbon);
+
+      return ribbon;
     }
   };
 
