@@ -8,11 +8,11 @@ module.exports = function (grunt) {
   grunt.initConfig({
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
-    banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-      '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-      ' Licensed MIT */\n',
+    banner: '/*!\n' +
+      ' * <%= pkg.description %> v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+      '<%= pkg.homepage ? " * " + pkg.homepage + "\\n" : "" %> * \n' +
+      ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
+      ' * Licensed MIT */\n',
     // Task configuration.
     clean: {
       files: ['dist']
@@ -39,7 +39,7 @@ module.exports = function (grunt) {
     qunit: {
       all: {
         options: {
-          urls: ['http://localhost:9000/test/<%= pkg.name %>.html']
+          urls: ['http://localhost:5000/test/<%= pkg.name %>.html']
         }
       }
     },
@@ -81,7 +81,7 @@ module.exports = function (grunt) {
       server: {
         options: {
           hostname: '*',
-          port: 9000
+          port: 5000
         }
       }
     }

@@ -1,6 +1,16 @@
 {
   "name": "safeharbor",
   "version": "0.1.0",
+  "main": "dist/jquery.safeharbor.js",
+  "ignore": [
+    "bower_components",
+    "node_modules",
+    "test",
+    "src",
+    "Gruntfile.*",
+    "**/.*",
+    "**/*.json"
+  ],
   "dependencies": {},
   "devDependencies": {
     "qunit": "~1.12.0",
