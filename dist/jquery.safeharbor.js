@@ -1,27 +1,54 @@
-/*! safeharbor - v0.1.0 - 2013-11-15
-* https://github.com/ndnhat/safeharbor
-* Copyright (c) 2013 Nhat Nguyen; Licensed MIT */
+/*!
+ * jQuery SafeHarbor Plugin v0.2.0 - 2013-11-20
+ * https://github.com/ndnhat/jquery-safeharbor
+ * 
+ * Copyright 2013 Nhat Nguyen
+ * Licensed MIT */
 (function ($) {
+  'use strict';
 
-  // Collection method.
-  $.fn.awesome = function () {
-    return this.each(function (i) {
-      // Do something awesome to each selected element.
-      $(this).html('awesome' + i);
-    });
+  $.safeHarbor = function (options) {
+    var hideRibbon = function() {
+      saveCookie();
+      $(this).closest('div').fadeOut();
+    };
+
+    var saveCookie = function() {
+      if ($.cookie) {
+        $.cookie($.safeHarbor.defaults.cookie.name, 'notified', { expires: $.safeHarbor.defaults.cookie.life });
+      }
+    };
+
+    options = $.extend($.safeHarbor.defaults, options);
+
+    if (!$.cookie || !$.cookie(options.cookie.name)) {
+      var closeBtn = $('<span>').css({float: 'right', margin: '0 12px', cursor: 'pointer'}).text('×').on('click', hideRibbon);
+      var ribbon = $('<div>').addClass(options.cssClass).css(options.styles).html(options.text).append(closeBtn);
+      $('body').prepend(ribbon);
+
+      return ribbon;
+    }
   };
 
-  // Static method.
-  $.awesome = function (options) {
-    // Override default options with passed-in options.
-    options = $.extend({}, $.awesome.options, options);
-    // Return something awesome.
-    return 'awesome' + options.punctuation;
-  };
-
-  // Static method default options.
-  $.awesome.options = {
-    punctuation: '.'
+  $.safeHarbor.defaults = {
+    text: 'This website requires cookies to function properly. Read more about this in our Privacy Policy.',
+    cookie: {
+      name: 'safe_harbor',
+      life: 10*365
+    },
+    cssClass: null,
+    styles: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      textAlign: 'center',
+      padding: '5px 0',
+      color: '#eee',
+      background: '#444',
+      opacity: 0.9,
+      zIndex: 5
+    }
   };
 
 }(jQuery));

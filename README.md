@@ -1,6 +1,6 @@
 # jQuery SafeHarbor Plugin
 
-Safe Harbor ribbon for OC Tanner
+Safe Harbor is a jQuery plugin that creates a privacy policy notice and helps your web application conform with the US-EU Safe Harbor. Optionally, Safe Harbor can be paired with [jquery-cookie][https://github.com/carhartl/jquery-cookie] to memorize the user's acknowledgement and not showing the notice in subsequent visits.
 
 ## Getting Started
 
@@ -13,10 +13,10 @@ In your web page:
 
 ```html
 <script src="jquery.js"></script>
-<script src="dist/safeharbor.min.js"></script>
+<script src="dist/jquery.safeharbor.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+  $.safeHarbor({text: 'Your text here'}); 
 });
 </script>
 ```
