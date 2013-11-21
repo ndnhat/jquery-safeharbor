@@ -1,5 +1,5 @@
 /*!
- * jQuery SafeHarbor Plugin v0.2.0 - 2013-11-20
+ * jQuery SafeHarbor Plugin v0.2.1 - 2013-11-20
  * https://github.com/ndnhat/jquery-safeharbor
  * 
  * Copyright 2013 Nhat Nguyen

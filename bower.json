@@ -1,7 +1,7 @@
 {
   "name": "safeharbor",
   "version": "0.1.0",
-  "main": "dist/jquery.safeharbor.js",
+  "main": "jquery.safeharbor.js",
   "ignore": [
     "bower_components",
     "node_modules",
