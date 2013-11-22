@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="jQuery Safe Harbor : A jQuery plugin that creates a privacy policy notice and helps your web application conform with the US-EU Safe Harbor." />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    <title>jQuery Safe Harbor</title>
+    <title>jQuery Safe Harbor by ndnhat</title>
   </head>
 
   <body>
+    <header>
+      <div class="inner">
+        <h1>jQuery Safe Harbor</h1>
+        <h2>A jQuery plugin that creates a privacy policy notice and helps your web application conform with the US-EU Safe Harbor.</h2>
+        <a href="https://github.com/ndnhat/jquery-safeharbor" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ndnhat/jquery-safeharbor">View on GitHub</a>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="jquerysafeharbor-" class="anchor" href="#jquerysafeharbor-"><span class="octicon octicon-link"></span></a>jquery.safeHarbor <a href="https://travis-ci.org/ndnhat/jquery-safeharbor"><img src="https://travis-ci.org/ndnhat/jquery-safeharbor.png" alt="Build Status"></a>
+</h1>
 
-          <h1 id="project_title">jQuery Safe Harbor</h1>
-          <h2 id="project_tagline">A jQuery plugin that creates a privacy policy notice and helps your web application conform with the US-EU Safe Harbor.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ndnhat/jquery-safeharbor/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ndnhat/jquery-safeharbor/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="jquery-safeharbor-plugin" class="anchor" href="#jquery-safeharbor-plugin"><span class="octicon octicon-link"></span></a>jQuery SafeHarbor Plugin</h1>
-
-<p>Safe Harbor is a jQuery plugin that creates a privacy policy notice and helps your web application conform with the US-EU Safe Harbor. Optionally, Safe Harbor can be paired with [jquery-cookie][<a href="https://github.com/carhartl/jquery-cookie">https://github.com/carhartl/jquery-cookie</a>] to memorize the user's acknowledgement and not showing the notice in subsequent visits.</p>
+<p>Safe Harbor is a jQuery plugin that creates a privacy policy notice and helps your web application conform with the US-EU Safe Harbor. Optionally, Safe Harbor can be paired with <a href="https://github.com/carhartl/jquery-cookie">jquery-cookie</a> to memorize the user's acknowledgement and not show the notice in subsequent visits.</p>
 
 <h2>
 <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
 
-<p>Download the <a href="https://raw.github.com/ndnhat/jquery-safeharbor/master/dist/jquery.safeharbor.min.js">production version</a> or the <a href="https://raw.github.com/ndnhat/jquery-safeharbor/master/dist/jquery.safeharbor.js">development version</a>.</p>
+<p>Download the <a href="https://raw.github.com/ndnhat/jquery-safeharbor/master/jquery.safeharbor.min.js">production version</a> or the <a href="https://raw.github.com/ndnhat/jquery-safeharbor/master/jquery.safeharbor.js">development version</a>.</p>
 
 <p>In your web page:</p>
 
 <div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"dist/jquery.safeharbor.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.cookie.js"</span><span class="nt">&gt;&lt;/script&gt;</span> <span class="c">&lt;!-- Optional --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.safeharbor.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script&gt;</span>
 <span class="nx">jQuery</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">.</span><span class="nx">safeHarbor</span><span class="p">({</span><span class="nx">text</span><span class="o">:</span> <span class="s1">'Your text here'</span><span class="p">});</span> 
+  <span class="nx">$</span><span class="p">.</span><span class="nx">safeHarbor</span><span class="p">({</span><span class="nx">text</span><span class="o">:</span> <span class="s1">'This is our &lt;a href="privacy.html"&gt;Privacy policy&lt;/a&gt;'</span><span class="p">});</span> 
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
@@ -66,18 +65,28 @@
 <a name="release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
 
 <p><em>(Nothing yet)</em></p>
-      </section>
+
+<p><a href="https://bitdeli.com/free" title="Bitdeli Badge"><img src="https://d2weczhvl823v0.cloudfront.net/ndnhat/jquery-safeharbor/trend.png" alt="Bitdeli Badge"></a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/ndnhat/jquery-safeharbor/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/ndnhat/jquery-safeharbor/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/ndnhat/jquery-safeharbor"></a> is maintained by <a href="https://github.com/ndnhat">ndnhat</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">jQuery Safe Harbor maintained by <a href="https://github.com/ndnhat">ndnhat</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-              <script type="text/javascript">
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -87,7 +96,6 @@
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-
 
   </body>
 </html>
