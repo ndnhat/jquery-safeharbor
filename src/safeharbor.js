@@ -1,6 +1,6 @@
 /*
  * jQuery SafeHarbor Plugin
- * https://github.com/ndnhat/jquery-safeharbor
+ * http://ndnhat.github.io/jquery-safeharbor
  *
  * Copyright (c) 2013 Nhat Nguyen
  * Licensed under the MIT license.
