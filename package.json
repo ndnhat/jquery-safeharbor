@@ -1,11 +1,11 @@
 {
   "name": "safeharbor",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "jQuery SafeHarbor Plugin",
   "keywords": [
     "jquery-plugin"
   ],
-  "homepage": "https://github.com/ndnhat/jquery-safeharbor",
+  "homepage": "http://ndnhat.github.io/jquery-safeharbor",
   "author": {
     "name": "Nhat Nguyen",
     "email": "ndnhat@hotmail.com",

@@ -34,11 +34,13 @@
   });
 
   test('supports style attribute', function() {
-    var cssStyles = {top: '100px'};
+    var cssStyles = {top: '100px', position: 'absolute'};
     this.ribbon = $.safeHarbor({styles: cssStyles});
 
-    expect(1);
-    ok(this.ribbon.css('top') === cssStyles.top, 'should support style attribute');
+    expect(3);
+    ok($.safeHarbor.defaults.styles.top === cssStyles.top, 'should add new options');
+    ok($.safeHarbor.defaults.styles.position === cssStyles.position, 'should override existing options');
+    ok($.safeHarbor.defaults.styles.color, 'should maintain default options');
   });
 
 }(jQuery));
