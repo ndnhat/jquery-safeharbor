@@ -1,6 +1,6 @@
 {
   "name": "safeharbor",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "title":  "jQuery Safe Harbor",
   "description": "A jQuery plugin that creates a privacy policy notice and helps your web application conform with the US-EU Safe Harbor.",
   "author": {
