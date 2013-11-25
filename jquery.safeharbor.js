@@ -1,6 +1,6 @@
 /*!
- * jQuery SafeHarbor Plugin v0.2.1 - 2013-11-20
- * https://github.com/ndnhat/jquery-safeharbor
+ * jQuery SafeHarbor Plugin v0.2.2 - 2013-11-24
+ * http://ndnhat.github.io/jquery-safeharbor
  * 
  * Copyright 2013 Nhat Nguyen
  * Licensed MIT */
@@ -8,7 +8,7 @@
   'use strict';
 
   $.safeHarbor = function (options) {
-    var hideRibbon = function() {
+    var hideNotice = function() {
       saveCookie();
       $(this).closest('div').fadeOut();
     };
@@ -19,15 +19,19 @@
       }
     };
 
-    options = $.extend($.safeHarbor.defaults, options);
+    var closeBtn = null;
+    var closeBrnStyles = {float: 'right', margin: '0 12px', cursor: 'pointer'};
+    var notice = null;
+
+    options = $.extend(true, $.safeHarbor.defaults, options);
 
     if (!$.cookie || !$.cookie(options.cookie.name)) {
-      var closeBtn = $('<span>').css({float: 'right', margin: '0 12px', cursor: 'pointer'}).text('×').on('click', hideRibbon);
-      var ribbon = $('<div>').addClass(options.cssClass).css(options.styles).html(options.text).append(closeBtn);
-      $('body').prepend(ribbon);
-
-      return ribbon;
+      closeBtn = $('<span>').css(closeBrnStyles).text('×').on('click', hideNotice);
+      notice = $('<div>').addClass(options.cssClass).css(options.styles).html(options.text).append(closeBtn);
+      $('body').prepend(notice);
     }
+
+    return notice;
   };
 
   $.safeHarbor.defaults = {
