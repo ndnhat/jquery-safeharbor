@@ -6,29 +6,19 @@
  * Licensed under the MIT license.
  */
 
-(function ($) {
+;(function ($) {
   'use strict';
 
-  $.safeHarbor = function (options) {
-    var hideNotice = function() {
-      saveCookie();
-      $(this).closest('div').fadeOut();
-    };
+  var pluginName = 'safeHarbor';
 
-    var saveCookie = function() {
-      if ($.cookie) {
-        $.cookie($.safeHarbor.defaults.cookie.name, 'notified', { expires: $.safeHarbor.defaults.cookie.life });
-      }
-    };
-
+  var safeHarbor = function(options) {
     var closeBtn = null;
-    var closeBrnStyles = {float: 'right', margin: '0 12px', cursor: 'pointer'};
     var notice = null;
 
-    options = $.extend(true, $.safeHarbor.defaults, options);
+    options = $.extend(true, safeHarbor.defaults, options);
 
     if (!$.cookie || !$.cookie(options.cookie.name)) {
-      closeBtn = $('<span>').css(closeBrnStyles).text('×').on('click', hideNotice);
+      closeBtn = $('<span>').css(options.closeStyles).text('×').click(hideNotice);
       notice = $('<div>').addClass(options.cssClass).css(options.styles).html(options.text).append(closeBtn);
       $('body').prepend(notice);
     }
@@ -36,7 +26,18 @@
     return notice;
   };
 
-  $.safeHarbor.defaults = {
+  var hideNotice = function() {
+    saveCookie();
+    $(this).parent().fadeOut();
+  };
+
+  var saveCookie = function() {
+    if ($.cookie) {
+      $.cookie(safeHarbor.defaults.cookie.name, 'notified', { expires: safeHarbor.defaults.cookie.life });
+    }
+  };
+
+  safeHarbor.defaults = {
     text: 'This website requires cookies to function properly. Read more about this in our Privacy Policy.',
     cookie: {
       name: 'safe_harbor',
@@ -54,7 +55,14 @@
       background: '#444',
       opacity: 0.9,
       zIndex: 5
+    },
+    closeStyles: {
+      float: 'right', 
+      margin: '0 12px', 
+      cursor: 'pointer'
     }
   };
+
+  $[pluginName] = safeHarbor;
 
 }(jQuery));

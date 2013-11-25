@@ -1,0 +1,27 @@
+{
+  "name": "safeharbor",
+  "version": "0.3.0",
+  "title":  "jQuery Safe Harbor",
+  "description": "A jQuery plugin that creates a privacy policy notice and helps your web application conform with the US-EU Safe Harbor.",
+  "author": {
+    "name": "Nhat Nguyen",
+    "url": "https://github.com/ndnhat"
+  },
+  "maintainers": [
+    {
+      "name": "Nhat Nguyen",
+      "url": "https://github.com/ndnhat"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.2"
+  },
+  "bugs": "https://github.com/ndnhat/jquery-safeharbor/issues",
+  "homepage": "http://ndnhat.github.io/jquery-safeharbor",
+  "docs": "http://ndnhat.github.io/jquery-safeharbor"
+}
